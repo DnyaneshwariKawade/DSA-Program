@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class AdvStreamAPI {
 
@@ -22,6 +23,14 @@ public class AdvStreamAPI {
 				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
 		
 		
+		Stream<Employee> empLst=list.stream().filter(i->i.getGender().equalsIgnoreCase("Male"));
+		
+		//empLst.forEach(System.out.println());
+		
+		
+		Stream<Integer> num= Stream.of(1,2,3,4);
+		num.forEach(System.out::print);
+		//System.out.println("num:: "+num.forEach(System.out::print));
 		
 		deptMap.forEach((k,v)->System.out.println(k+" "+v));
 		

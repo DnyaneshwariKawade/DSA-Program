@@ -3,17 +3,26 @@ package java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.OptionalDouble;
+import java.util.function.BiFunction;
 
 public class StreamAPI {
+	
 
 	public static void main(String[] args) {
+		
+		BiFunction<Integer, Integer, Integer> f = (x, y) -> {
+			int sum = x + y;
+			int avg = sum / 2;
+			return avg;
+		};
+		f.apply(10, 10);
 
 		List<Product> list = new ArrayList<>();
 		list.add(new Product(1, "HP Laptop", 10000d));
 		list.add(new Product(2, "Dell Laptop", 80000d));
 		list.add(new Product(3, "MAC Laptop", 50000d));
 
+		
 		double priceSum = list.stream().mapToDouble(p -> p.getPrice()).sum();
 		System.out.println("priceSum:: " + priceSum);
 

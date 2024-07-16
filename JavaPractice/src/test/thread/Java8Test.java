@@ -15,6 +15,9 @@ public class Java8Test {
 		
 		B b=n-> n*n;
 		System.out.println(b.sqr(5));
+
+
+
 	}
 
 }

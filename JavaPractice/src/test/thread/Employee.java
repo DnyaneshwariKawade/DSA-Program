@@ -1,6 +1,6 @@
 package test.thread;
 
-public class MainApp {
+class MainApp {
 	
 	
 	

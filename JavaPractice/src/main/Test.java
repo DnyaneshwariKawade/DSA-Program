@@ -4,9 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
+	
+	public static List<Integer> rotateArray(ArrayList<Integer> arr, 
+		    int k) {
+		//List<Integer> list=new ArrayList<>(arr);
+			int n=arr.size();
+		        rotate(arr, 0, n-k);
+		        rotate(arr, n-k, n-1);
+		        rotate(arr, 0, n-1);
+		        
+		        return arr;
+		    }
+
+		    public static void rotate(ArrayList<Integer> arr,int left, int right) {
+
+		        while(left<=right) {
+		            int temp=arr.get(left);
+		            arr.set(left, arr.get(right));
+		            arr.set(right, temp);
+		            left++;
+		            right++;
+		        }
+		    }
 
 	public static void main(String[] args) {
-
+		
+		
+		
+		
+		//Collections.addAll(list, arr);
+		
 //	    List<Integer> list=Arrays.asList(1,1,2,3,1,1,2,2);
 //	    
 //	    

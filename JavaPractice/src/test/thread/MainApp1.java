@@ -21,10 +21,11 @@ public class MainApp1 {
 	 			.filter(emp->emp.getSalary()>10000)
 	 			.collect(Collectors.summingDouble(Emp::getSalary));
 	 	
+	 	list.stream().filter(e->e.getSalary()>1000);	 	
 	 	
-	 	list.stream()
-	 			.filter(emp->emp.getSalary()>10000)
-	 			.collect(Collectors.groupingBy(Collectors.summingDouble(Emp::getSalary)));
+//	 	list.stream()
+//	 			.filter(emp->emp.getSalary()>10000)
+//	 			.collect(Collectors.groupingBy(Collectors.summingDouble(Emp::getSalary)));
 		
 		//Map<String, Double> map=list.stream().collect(Collectors.groupingBy(Emp::getName, Collectors.averagingDouble(Emp::getSalary)));
 		System.out.println(sumSal);

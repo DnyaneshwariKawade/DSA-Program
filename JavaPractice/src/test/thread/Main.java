@@ -1,44 +1,59 @@
 package test.thread;
 
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
+	
+	
+	public static double test(List<? extends Number> num) {
+		double d = 0;
+		for (Number n : num) {
+			d += n.doubleValue();
+		}
+		return d;
+	}
 
 	public static void main(String[] args) throws InterruptedException {
-		PC pc = new PC();
-
-		Thread t1 = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					pc.produce();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-
-		Thread t2 = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				try {
-					pc.consume();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-		});
-
-		t1.start();
-		t2.start();
-
-		t1.join();
-		t2.join();
+		
+		List<Double> list = Arrays.asList(1.2, 2.3);
+		System.out.println(test(list));
+		
+//		PC pc = new PC();
+//
+//		Thread t1 = new Thread(new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				// TODO Auto-generated method stub
+//				try {
+//					pc.produce();
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//
+//		Thread t2 = new Thread(new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				try {
+//					pc.consume();
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//
+//			}
+//		});
+//
+//		t1.start();
+//		t2.start();
+//
+//		t1.join();
+//		t2.join();
 
 	}
 }
